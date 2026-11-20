@@ -1,0 +1,1617 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
+    <title>DJ CHRISTHEBLAZER | HITSVILLE REPUBLIK — Official Platform & Merch</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Google Fonts: Plus Jakarta Sans, Syne & Space Grotesk -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                        display: ['Syne', 'sans-serif'],
+                        mono: ['Space Grotesk', 'monospace'],
+                    },
+                    colors: {
+                        obsidian: '#09090B',
+                        stoneSurface: '#121215',
+                        stoneElevated: '#18181C',
+                        champagne: '#D4AF37',
+                        champagneLight: '#E8C85A',
+                        ivory: '#FAFAFA',
+                        hvTurquoise: '#19B5C8',
+                        hvCoral: '#E63946',
+                        hvOrange: '#F77F00',
+                        hvGreen: '#2A9D8F',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Strict overflow protection across all mobile, tablet & desktop viewports */
+        html, body {
+            max-width: 100%;
+            overflow-x: hidden;
+            -webkit-tap-highlight-color: transparent;
+            background-color: #09090B;
+            color: #FAFAFA;
+        }
+
+        /* Refined Scrollbar */
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: #09090B; }
+        ::-webkit-scrollbar-thumb { background: #27272A; border-radius: 9999px; }
+        ::-webkit-scrollbar-thumb:hover { background: #D4AF37; }
+
+        /* Safe area padding for bottom persistent audio bar */
+        .pb-safe-player {
+            padding-bottom: calc(6.25rem + env(safe-area-inset-bottom, 0px));
+        }
+        .bottom-player-safe {
+            padding-bottom: calc(0.65rem + env(safe-area-inset-bottom, 0px));
+        }
+
+        /* Minimalist Equalizer Animation */
+        @keyframes eqPulse {
+            0%, 100% { transform: scaleY(0.25); }
+            50% { transform: scaleY(1); }
+        }
+        .eq-bar {
+            transform-origin: bottom;
+            animation: eqPulse 0.85s ease-in-out infinite;
+        }
+        .eq-bar:nth-child(2) { animation-delay: 0.15s; animation-duration: 0.65s; }
+        .eq-bar:nth-child(3) { animation-delay: 0.3s; animation-duration: 0.9s; }
+        .eq-bar:nth-child(4) { animation-delay: 0.1s; animation-duration: 0.75s; }
+        .paused-eq .eq-bar {
+            animation-play-state: paused;
+            transform: scaleY(0.25);
+        }
+
+        /* Editorial Surface Card */
+        .editorial-card {
+            background-color: #121215;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            transition: border-color 0.25s ease, transform 0.25s ease, background-color 0.25s ease;
+        }
+        .editorial-card:hover {
+            border-color: rgba(212, 175, 55, 0.35);
+        }
+
+        /* Custom Range Scrubber */
+        input[type="range"] {
+            -webkit-appearance: none;
+            background: transparent;
+            cursor: pointer;
+        }
+        input[type="range"]::-webkit-slider-runnable-track {
+            height: 4px;
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.14);
+        }
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            height: 13px;
+            width: 13px;
+            border-radius: 50%;
+            background: #D4AF37;
+            margin-top: -4.5px;
+            transition: transform 0.15s ease;
+        }
+        input[type="range"]::-webkit-slider-thumb:hover {
+            transform: scale(1.2);
+        }
+
+        /* Stencil Split Effect for Hitsville Republik Wordmark */
+        .logo-wordmark-stencil {
+            mask-image: linear-gradient(
+                to bottom,
+                black 0%,
+                black 46%,
+                transparent 46%,
+                transparent 54%,
+                black 54%,
+                black 100%
+            );
+            -webkit-mask-image: linear-gradient(
+                to bottom,
+                black 0%,
+                black 46%,
+                transparent 46%,
+                transparent 54%,
+                black 54%,
+                black 100%
+            );
+        }
+    </style>
+</head>
+<body class="font-sans antialiased selection:bg-champagne selection:text-obsidian pb-safe-player">
+
+    <!-- SHARED SVG DEFINITIONS: FAITHFUL HITSVILLE REPUBLIK TROPICAL HIBISCUS & KITENGE PATTERN -->
+    <svg width="0" height="0" class="hidden" aria-hidden="true">
+        <defs>
+            <!-- Authentic Tropical Hibiscus, Leaf & Geometric Pattern Fill matching the official logo -->
+            <pattern id="hv-authentic-pattern" patternUnits="userSpaceOnUse" width="80" height="80">
+                <!-- Vibrant Turquoise Base (#19B5C8) -->
+                <rect width="80" height="80" fill="#19B5C8"/>
+                
+                <!-- Tropical Botanical Leaves (#2A9D8F & #1B7F6E) -->
+                <path d="M-4,22 Q16,2 34,20 Q16,36 -4,22 Z" fill="#2A9D8F"/>
+                <path d="M46,62 Q64,42 84,60 Q64,76 46,62 Z" fill="#1B7F6E"/>
+                <path d="M52,6 Q72,2 76,22 Q58,24 52,6 Z" fill="#2A9D8F"/>
+                <path d="M6,68 Q22,54 34,72 Q18,80 6,68 Z" fill="#1B7F6E"/>
+
+                <!-- Warm Orange Hibiscus Blossom (#F77F00) -->
+                <g transform="translate(22, 50)">
+                    <circle cx="-7" cy="-5" r="7" fill="#F77F00"/>
+                    <circle cx="7" cy="-5" r="7" fill="#F77F00"/>
+                    <circle cx="-6" cy="6" r="7" fill="#F77F00"/>
+                    <circle cx="6" cy="6" r="7" fill="#F77F00"/>
+                    <circle cx="0" cy="-9" r="7" fill="#F77F00"/>
+                    <circle cx="0" cy="0" r="4" fill="#FCBF49"/>
+                    <circle cx="0" cy="0" r="1.8" fill="#E63946"/>
+                </g>
+
+                <!-- Coral Red Hibiscus Blossom (#E63946) -->
+                <g transform="translate(60, 26)">
+                    <circle cx="-7" cy="-4" r="7.5" fill="#E63946"/>
+                    <circle cx="7" cy="-4" r="7.5" fill="#E63946"/>
+                    <circle cx="-6" cy="7" r="7.5" fill="#E63946"/>
+                    <circle cx="6" cy="7" r="7.5" fill="#E63946"/>
+                    <circle cx="0" cy="-8" r="7.5" fill="#E63946"/>
+                    <circle cx="0" cy="0" r="4" fill="#FCBF49"/>
+                </g>
+
+                <!-- Geometric Kitenge Accents (#FCBF49 & #E63946) -->
+                <polygon points="10,6 19,6 14.5,14" fill="#FCBF49"/>
+                <polygon points="36,34 45,34 40.5,42" fill="#E63946"/>
+                <circle cx="42" cy="14" r="3" fill="#FCBF49"/>
+                <circle cx="10" cy="36" r="2.5" fill="#FCBF49"/>
+                <circle cx="72" cy="46" r="3" fill="#FCBF49"/>
+            </pattern>
+
+            <!-- Reusable Exact Concentric Segmented Spiral Emblem Symbol -->
+            <symbol id="hv-spiral-mark" viewBox="0 0 140 140">
+                <!-- Outer Segmented Ring (Top-right gap, left arc, bottom-right arc, accent dots) -->
+                <circle cx="70" cy="70" r="56" fill="none" stroke="url(#hv-authentic-pattern)" stroke-width="11" stroke-linecap="round"
+                        stroke-dasharray="165 36 85 36" transform="rotate(-105 70 70)"/>
+                <!-- Outer Accent Dots -->
+                <circle cx="79" cy="15" r="5.5" fill="url(#hv-authentic-pattern)"/>
+                <circle cx="111" cy="108" r="5.5" fill="url(#hv-authentic-pattern)"/>
+
+                <!-- Middle Segmented Ring -->
+                <circle cx="70" cy="70" r="38" fill="none" stroke="url(#hv-authentic-pattern)" stroke-width="11" stroke-linecap="round"
+                        stroke-dasharray="135 28 45 30" transform="rotate(-40 70 70)"/>
+                <!-- Middle Inner-Left Accent Dot -->
+                <circle cx="38" cy="91" r="5.5" fill="url(#hv-authentic-pattern)"/>
+
+                <!-- Inner 'G/C' Spiral Hook -->
+                <path d="M 74 52 A 19 19 0 1 0 88 73 L 71 73" fill="none" stroke="url(#hv-authentic-pattern)" stroke-width="11" stroke-linecap="round" stroke-linejoin="round"/>
+            </symbol>
+        </defs>
+    </svg>
+
+    <!-- TOP NAVIGATION HEADER -->
+    <header class="sticky top-0 z-40 bg-obsidian/90 backdrop-blur-xl border-b border-white/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16 sm:h-20 gap-3">
+                
+                <!-- Brand Lockup with Clean Crisp Hitsville Republik Emblem -->
+                <a href="#" class="flex items-center gap-3 min-w-0 group">
+                    <!-- Crisp Ivory Circular Emblem Badge so the Tropical Pattern Pops Cleanly -->
+                    <div class="w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-[#FAFAFA] p-1.5 flex items-center justify-center shadow-md shrink-0 ring-1 ring-white/20 group-hover:scale-105 transition">
+                        <svg class="w-full h-full">
+                            <use href="#hv-spiral-mark"></use>
+                        </svg>
+                    </div>
+                    <div class="min-w-0">
+                        <span class="block font-display font-extrabold text-sm sm:text-base tracking-wide text-ivory leading-none truncate">
+                            DJ CHRISTHEBLAZER
+                        </span>
+                        <span class="block font-mono text-[10px] sm:text-[11px] tracking-[0.2em] text-champagne font-semibold uppercase mt-1 truncate">
+                            Hitsville Republik • Kenya
+                        </span>
+                    </div>
+                </a>
+
+                <!-- Desktop Navigation -->
+                <nav class="hidden md:flex items-center space-x-8 text-xs font-mono uppercase tracking-widest text-zinc-400">
+                    <a href="#mixes" class="hover:text-ivory transition">Mixes</a>
+                    <a href="#shop" class="hover:text-champagne transition">Merch (1000/=)</a>
+                    <a href="#tour" class="hover:text-ivory transition">Schedule</a>
+                    <a href="#socials" class="hover:text-ivory transition">Channels</a>
+                    <a href="#booking" class="hover:text-champagne transition">Bookings</a>
+                </nav>
+
+                <!-- Right Actions: YouTube, Bag & Mobile Drawer Toggle -->
+                <div class="flex items-center gap-2 sm:gap-3 shrink-0">
+                    <a href="https://youtube.com/@christheblazer?si=sZWgVy6MGRqrBKhg" target="_blank" rel="noopener noreferrer" class="hidden sm:inline-flex items-center gap-2 px-3.5 py-2 rounded-full bg-white/5 hover:bg-white/10 border border-white/15 text-xs font-mono uppercase tracking-wider text-ivory transition">
+                        <i class="fa-brands fa-youtube text-hvCoral text-sm"></i> YouTube
+                    </a>
+
+                    <button onclick="toggleCart(true)" aria-label="Open Shopping Bag" class="relative min-w-[44px] min-h-[44px] px-3 rounded-full bg-champagne/10 hover:bg-champagne/20 border border-champagne/40 text-champagne transition flex items-center justify-center gap-1.5">
+                        <i class="fa-solid fa-bag-shopping text-sm"></i>
+                        <span id="cart-badge" class="font-mono font-bold text-xs">0</span>
+                    </button>
+
+                    <button onclick="toggleMobileMenu()" aria-label="Open Navigation Menu" class="md:hidden min-w-[44px] min-h-[44px] rounded-full bg-white/5 border border-white/10 text-ivory hover:border-champagne/50 flex items-center justify-center">
+                        <i class="fa-solid fa-bars text-base"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Dropdown Drawer -->
+        <div id="mobile-menu" class="hidden md:hidden bg-stoneSurface border-b border-white/10 px-4 pt-3 pb-6 space-y-1.5">
+            <a href="#mixes" onclick="toggleMobileMenu()" class="block px-4 py-3.5 rounded-xl hover:bg-white/5 text-sm font-medium text-ivory">Curated Mixes & Sets</a>
+            <a href="#shop" onclick="toggleMobileMenu()" class="block px-4 py-3.5 rounded-xl hover:bg-white/5 text-sm font-medium text-ivory">Official Merch (Tees 1000/=)</a>
+            <a href="#tour" onclick="toggleMobileMenu()" class="block px-4 py-3.5 rounded-xl hover:bg-white/5 text-sm font-medium text-ivory">Kenya Event Schedule</a>
+            <a href="#socials" onclick="toggleMobileMenu()" class="block px-4 py-3.5 rounded-xl hover:bg-white/5 text-sm font-medium text-ivory">Social & YouTube Channels</a>
+            <a href="#booking" onclick="toggleMobileMenu()" class="block px-4 py-3.5 rounded-xl hover:bg-white/5 text-sm font-semibold text-champagne">Book For Events</a>
+            <div class="pt-2">
+                <a href="https://youtube.com/@christheblazer?si=sZWgVy6MGRqrBKhg" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-2 w-full py-3.5 rounded-xl bg-white/5 border border-white/15 text-xs font-mono uppercase tracking-wider text-ivory">
+                    <i class="fa-brands fa-youtube text-hvCoral text-base"></i> Listen on YouTube (@christheblazer)
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main class="w-full overflow-x-hidden">
+
+        <!-- 1. LUXURY EDITORIAL HERO SECTION WITH INTERACTIVE DJ PHOTO PLACEHOLDER -->
+        <section class="relative pt-8 pb-16 sm:pt-14 sm:pb-24 lg:pt-20 lg:pb-28 border-b border-white/10">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+                    
+                    <!-- Left Column: Editorial Bio, Genres & Primary CTAs -->
+                    <div class="lg:col-span-7 space-y-6 text-left">
+                        <!-- Subtle Location Eyebrow -->
+                        <div class="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-stoneSurface border border-white/10">
+                            <span class="w-2 h-2 rounded-full bg-champagne"></span>
+                            <span class="font-mono text-[11px] sm:text-xs uppercase tracking-[0.2em] text-zinc-300">
+                                Nairobi, Kenya • <span class="text-champagne font-semibold">Hitsville Republik</span>
+                            </span>
+                        </div>
+
+                        <!-- Sharp Editorial Headline -->
+                        <div class="space-y-2">
+                            <h1 class="font-display font-extrabold text-4xl sm:text-6xl lg:text-[4.25rem] tracking-tight leading-[1.02] text-ivory">
+                                DJ CHRISTHEBLAZER
+                            </h1>
+                            <p class="font-mono text-xs sm:text-sm uppercase tracking-[0.25em] text-zinc-400">
+                                Executive Selector & Resident Sound Architect
+                            </p>
+                        </div>
+
+                        <!-- Refined Bio -->
+                        <p class="text-zinc-300 text-base sm:text-lg max-w-2xl leading-relaxed font-normal">
+                            Commanding premier nightlife rooms, luxury lounges, and headline stages across Kenya. Blending seamless crowd mastery across <span class="text-ivory font-medium">Kenyan &amp; Global Hits, Riddim, Hip-Hop, Afrobeats, Amapiano, Pop, and Reggae</span> under the <span class="text-champagne font-medium">Hitsville Republik</span> imprint.
+                        </p>
+
+                        <!-- Genre Tag Bar -->
+                        <div class="flex flex-wrap gap-2 pt-1">
+                            <span class="px-3 py-1 rounded-full bg-stoneSurface border border-white/10 font-mono text-[11px] text-zinc-300">Kenyan &amp; Global Hits</span>
+                            <span class="px-3 py-1 rounded-full bg-stoneSurface border border-white/10 font-mono text-[11px] text-zinc-300">Riddim</span>
+                            <span class="px-3 py-1 rounded-full bg-stoneSurface border border-white/10 font-mono text-[11px] text-zinc-300">Hip-Hop</span>
+                            <span class="px-3 py-1 rounded-full bg-stoneSurface border border-white/10 font-mono text-[11px] text-zinc-300">Afrobeats</span>
+                            <span class="px-3 py-1 rounded-full bg-stoneSurface border border-white/10 font-mono text-[11px] text-zinc-300">Amapiano</span>
+                            <span class="px-3 py-1 rounded-full bg-stoneSurface border border-white/10 font-mono text-[11px] text-zinc-300">Pop</span>
+                            <span class="px-3 py-1 rounded-full bg-stoneSurface border border-white/10 font-mono text-[11px] text-zinc-300">Reggae</span>
+                        </div>
+
+                        <!-- Primary Editorial CTAs -->
+                        <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 pt-2">
+                            <a href="https://youtube.com/@christheblazer?si=sZWgVy6MGRqrBKhg" target="_blank" rel="noopener noreferrer" class="min-h-[50px] px-7 py-3.5 rounded-full bg-ivory hover:bg-champagne text-obsidian font-mono text-xs font-bold uppercase tracking-widest transition flex items-center justify-center gap-2.5">
+                                <i class="fa-brands fa-youtube text-hvCoral text-base"></i> Listen on YouTube
+                            </a>
+                            <a href="#booking" class="min-h-[50px] px-7 py-3.5 rounded-full bg-stoneSurface hover:bg-stoneElevated border border-white/15 hover:border-champagne/50 text-ivory font-mono text-xs font-bold uppercase tracking-widest transition flex items-center justify-center gap-2.5">
+                                Book For Events <i class="fa-solid fa-arrow-right text-[11px] text-champagne"></i>
+                            </a>
+                        </div>
+
+                        <!-- Editorial Metrics & Brand Emblem Lockup -->
+                        <div class="pt-6 border-t border-white/10 flex flex-wrap items-center justify-between gap-6">
+                            <div class="flex items-center gap-6 sm:gap-8">
+                                <div>
+                                    <p class="font-display font-bold text-xl sm:text-2xl text-ivory">254 / Global</p>
+                                    <p class="font-mono text-[11px] uppercase tracking-wider text-zinc-400">Open-Format Curation</p>
+                                </div>
+                                <div class="h-8 w-px bg-white/10"></div>
+                                <div>
+                                    <p class="font-display font-bold text-xl sm:text-2xl text-champagne">KSh 1,000/=</p>
+                                    <p class="font-mono text-[11px] uppercase tracking-wider text-zinc-400">Official Label Tees</p>
+                                </div>
+                            </div>
+
+                            <!-- Crisp Official Hitsville Republik Wordmark & Emblem Lockup -->
+                            <div class="flex items-center gap-3 px-3.5 py-2 rounded-2xl bg-[#FAFAFA] text-obsidian shadow-sm">
+                                <svg class="w-9 h-9 shrink-0">
+                                    <use href="#hv-spiral-mark"></use>
+                                </svg>
+                                <div class="leading-none">
+                                    <span class="block font-display font-extrabold text-[11px] tracking-[0.22em] text-hvTurquoise logo-wordmark-stencil">HITSVILLE</span>
+                                    <span class="block font-display font-extrabold text-[11px] tracking-[0.22em] text-hvCoral logo-wordmark-stencil mt-0.5">REPUBLIK</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Column: 4:5 High-Fashion Portrait Press-Photo Placeholder with Live Upload -->
+                    <div class="lg:col-span-5 w-full">
+                        <div class="mx-auto max-w-sm sm:max-w-md">
+                            <!-- Hidden File Input for Instant Client Preview -->
+                            <input type="file" id="dj-photo-input" accept="image/*" class="hidden" onchange="handleDjPhotoUpload(event)">
+
+                            <!-- 4:5 Aspect Ratio Press Photo Frame -->
+                            <div class="relative aspect-[4/5] w-full rounded-3xl bg-stoneSurface border border-white/15 overflow-hidden shadow-2xl group">
+                                
+                                <!-- Uploaded Image Target (Hidden until user selects photo) -->
+                                <img id="dj-uploaded-photo" src="" alt="DJ Christheblazer Official Press Portrait" class="hidden w-full h-full object-cover object-center transition duration-500">
+
+                                <!-- Editorial Studio Placeholder (Shown before photo upload) -->
+                                <div id="dj-photo-placeholder" class="w-full h-full flex flex-col items-center justify-between p-6 sm:p-8 bg-gradient-to-b from-[#18181D] via-[#111114] to-[#09090B] relative">
+                                    <!-- Top Frame Editorial Metadata -->
+                                    <div class="w-full flex items-center justify-between text-[10px] font-mono uppercase tracking-[0.2em] text-zinc-400 z-10">
+                                        <span>Press Portrait // 01</span>
+                                        <span class="text-champagne">4:5 Editorial</span>
+                                    </div>
+
+                                    <!-- Refined Studio Silhouette & Deck Graphic -->
+                                    <div class="relative flex flex-col items-center justify-center my-auto text-center z-10">
+                                        <div class="w-28 h-28 sm:w-32 sm:h-32 rounded-full border border-dashed border-champagne/40 bg-white/[0.02] flex items-center justify-center mb-4">
+                                            <svg viewBox="0 0 120 120" class="w-20 h-20 text-zinc-500" fill="none" stroke="currentColor" stroke-width="1.5">
+                                                <!-- Minimalist Studio Portrait & Headphones Silhouette -->
+                                                <circle cx="60" cy="44" r="18"/>
+                                                <path d="M36 44 C36 28 84 28 84 44" stroke="#D4AF37" stroke-width="2"/>
+                                                <rect x="31" y="38" width="6" height="14" rx="3" fill="#D4AF37" stroke="none"/>
+                                                <rect x="83" y="38" width="6" height="14" rx="3" fill="#D4AF37" stroke="none"/>
+                                                <path d="M26 98 C28 76 42 68 60 68 C78 68 92 76 94 98"/>
+                                            </svg>
+                                        </div>
+                                        <p class="font-display font-bold text-base sm:text-lg text-ivory tracking-wide">
+                                            DJ CHRISTHEBLAZER
+                                        </p>
+                                        <p class="font-mono text-[11px] text-zinc-400 mt-1 max-w-[220px]">
+                                            Official Press Photo Space — Upload portrait to preview live
+                                        </p>
+                                    </div>
+
+                                    <!-- Bottom Corner Framing Guides -->
+                                    <div class="w-full flex items-center justify-between text-[10px] font-mono text-zinc-500 z-10">
+                                        <span>NAIROBI • KE</span>
+                                        <span>HITSVILLE REPUBLIK</span>
+                                    </div>
+
+                                    <!-- Subtle Editorial Crosshair Lines -->
+                                    <div class="absolute inset-4 border border-white/[0.06] rounded-2xl pointer-events-none"></div>
+                                </div>
+
+                                <!-- Bottom Overlay Bar with Upload / Change Photo Trigger -->
+                                <div class="absolute inset-x-0 bottom-0 p-4 sm:p-5 bg-gradient-to-t from-black/90 via-black/60 to-transparent flex items-center justify-between gap-3 z-20">
+                                    <div class="min-w-0">
+                                        <span id="photo-status-label" class="block font-mono text-[10px] uppercase tracking-widest text-champagne truncate">
+                                            Awaiting Press Photo
+                                        </span>
+                                        <span class="block text-xs text-zinc-300 truncate">
+                                            DJ Christheblazer
+                                        </span>
+                                    </div>
+
+                                    <div class="flex items-center gap-2 shrink-0">
+                                        <button type="button" id="remove-photo-btn" onclick="resetDjPhoto()" class="hidden min-h-[42px] px-3 py-2 rounded-full bg-black/70 hover:bg-hvCoral text-white border border-white/15 font-mono text-[11px] transition" title="Reset Placeholder">
+                                            <i class="fa-solid fa-rotate-left"></i>
+                                        </button>
+                                        <button type="button" onclick="document.getElementById('dj-photo-input').click()" class="min-h-[44px] px-4 py-2 rounded-full bg-ivory hover:bg-champagne text-obsidian font-mono text-[11px] font-bold uppercase tracking-wider shadow-lg transition flex items-center gap-2">
+                                            <i class="fa-solid fa-camera"></i>
+                                            <span id="upload-btn-text">Upload DJ Press Photo</span>
+                                        </button>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. CURATED MIXES & YOUTUBE SHOWCASE -->
+        <section id="mixes" class="py-14 sm:py-24 border-b border-white/10">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 sm:mb-12 gap-4">
+                    <div>
+                        <span class="font-mono text-xs uppercase tracking-[0.2em] text-champagne">Audio &amp; Visual Curation</span>
+                        <h2 class="font-display font-extrabold text-2xl sm:text-4xl lg:text-5xl text-ivory mt-2">
+                            Signature Mixes &amp; Live Sets
+                        </h2>
+                    </div>
+                    <a href="https://youtube.com/@christheblazer?si=sZWgVy6MGRqrBKhg" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto min-h-[46px] inline-flex items-center justify-center gap-2.5 px-5 py-3 rounded-full bg-stoneSurface hover:bg-stoneElevated border border-white/15 hover:border-champagne/50 text-ivory font-mono text-xs font-semibold uppercase tracking-wider transition">
+                        <i class="fa-brands fa-youtube text-hvCoral text-base"></i> Watch Full Sets on YouTube <i class="fa-solid fa-arrow-up-right-from-square text-[10px] text-zinc-400"></i>
+                    </a>
+                </div>
+
+                <!-- Editorial Tracklist Grid -->
+                <div id="mixes-grid" class="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-5">
+                    <!-- Populated via JS -->
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. HITSVILLE REPUBLIK MERCHANDISE (KSh 1,000/= T-SHIRTS & COMING SOON CAPS) -->
+        <section id="shop" class="py-14 sm:py-24 border-b border-white/10 bg-[#0C0C0F]">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex flex-col lg:flex-row lg:items-end justify-between mb-10 sm:mb-14 gap-4">
+                    <div>
+                        <span class="font-mono text-xs uppercase tracking-[0.2em] text-champagne">Official Label Apparel</span>
+                        <h2 class="font-display font-extrabold text-2xl sm:text-4xl lg:text-5xl text-ivory mt-2">
+                            Hitsville Republik Merch
+                        </h2>
+                    </div>
+                    <p class="text-zinc-400 text-sm max-w-md leading-relaxed">
+                        Heavyweight cotton tees featuring the official tropical Hitsville Republik crest. Priced at <strong class="text-ivory">KSh 1,000/=</strong> with instant M-Pesa Express checkout. Use code <span class="font-mono text-champagne">HITSVILLE10</span> for 10% off.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-stretch">
+                    
+                    <!-- LEFT: HITSVILLE REPUBLIK SIGNATURE T-SHIRT (KSh 1,000/=) -->
+                    <div class="lg:col-span-7 editorial-card rounded-3xl p-5 sm:p-8 flex flex-col justify-between">
+                        <div>
+                            <div class="flex flex-wrap items-center justify-between gap-2 pb-5 mb-6 border-b border-white/10">
+                                <span class="font-mono text-xs uppercase tracking-widest text-emerald-400 flex items-center gap-2">
+                                    <span class="w-2 h-2 rounded-full bg-emerald-400"></span> Available Now • Nairobi &amp; Nationwide
+                                </span>
+                                <span class="font-display font-extrabold text-2xl sm:text-3xl text-champagne">
+                                    KSh 1,000/=
+                                </span>
+                            </div>
+
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 items-center">
+                                <!-- Studio Garment Mockup with Crisp Hitsville Republik Logo on Chest -->
+                                <div class="relative rounded-2xl bg-[#09090B] border border-white/10 p-6 flex flex-col items-center justify-center min-h-[260px]">
+                                    <span id="tee-color-label" class="absolute top-3.5 left-3.5 px-2.5 py-1 rounded-full bg-white/5 border border-white/10 font-mono text-[10px] uppercase tracking-wider text-zinc-300">
+                                        Black Edition
+                                    </span>
+
+                                    <!-- Crisp T-Shirt Vector Mockup -->
+                                    <svg viewBox="0 0 260 260" class="w-44 h-44 sm:w-52 sm:h-52 drop-shadow-2xl transition-all duration-300 mt-3">
+                                        <!-- Garment Body -->
+                                        <path id="tee-svg-body" d="M 75 32 L 102 22 C 115 34 145 34 158 22 L 185 32 L 236 74 L 210 108 L 184 88 L 184 234 L 76 234 L 76 88 L 50 108 L 24 74 Z"
+                                              fill="#141417" stroke="#2E2E34" stroke-width="2.5" stroke-linejoin="round"/>
+                                        <!-- Collar Ribbing -->
+                                        <path d="M 102 22 C 115 38 145 38 158 22" fill="none" stroke="#3F3F46" stroke-width="2.5"/>
+                                        
+                                        <!-- Authentic Hitsville Republik Concentric Spiral Logo on Chest -->
+                                        <g transform="translate(103, 66) scale(0.39)">
+                                            <circle cx="70" cy="70" r="56" fill="none" stroke="url(#hv-authentic-pattern)" stroke-width="11" stroke-linecap="round"
+                                                    stroke-dasharray="165 36 85 36" transform="rotate(-105 70 70)"/>
+                                            <circle cx="79" cy="15" r="5.5" fill="url(#hv-authentic-pattern)"/>
+                                            <circle cx="111" cy="108" r="5.5" fill="url(#hv-authentic-pattern)"/>
+                                            <circle cx="70" cy="70" r="38" fill="none" stroke="url(#hv-authentic-pattern)" stroke-width="11" stroke-linecap="round"
+                                                    stroke-dasharray="135 28 45 30" transform="rotate(-40 70 70)"/>
+                                            <circle cx="38" cy="91" r="5.5" fill="url(#hv-authentic-pattern)"/>
+                                            <path d="M 74 52 A 19 19 0 1 0 88 73 L 71 73" fill="none" stroke="url(#hv-authentic-pattern)" stroke-width="11" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </g>
+
+                                        <!-- Stacked Stencil Wordmark Under Spiral -->
+                                        <text x="130" y="133" text-anchor="middle" fill="url(#hv-authentic-pattern)" font-family="'Syne', sans-serif" font-weight="800" font-size="9.5" letter-spacing="2.2">
+                                            HITSVILLE
+                                        </text>
+                                        <text x="130" y="144" text-anchor="middle" fill="url(#hv-authentic-pattern)" font-family="'Syne', sans-serif" font-weight="800" font-size="9.5" letter-spacing="2.2">
+                                            REPUBLIK
+                                        </text>
+                                    </svg>
+
+                                    <span class="font-mono text-[10px] uppercase tracking-widest text-zinc-500 mt-2">
+                                        220 GSM Combed Cotton
+                                    </span>
+                                </div>
+
+                                <!-- Customization Controls -->
+                                <div class="space-y-5">
+                                    <div>
+                                        <h3 class="font-display font-bold text-xl sm:text-2xl text-ivory">
+                                            Hitsville Republik Signature Tee
+                                        </h3>
+                                        <p class="text-xs sm:text-sm text-zinc-400 mt-1.5 leading-relaxed">
+                                            Tailored relaxed fit featuring the multi-color tropical Hitsville Republik chest emblem. Available in Black, White, Red, and Blue.
+                                        </p>
+                                    </div>
+
+                                    <!-- Color Swatches: Red, Blue, White, Black -->
+                                    <div>
+                                        <label class="block font-mono text-[11px] uppercase tracking-wider text-zinc-400 mb-2.5">
+                                            Colorway: <span id="selected-color-text" class="text-ivory font-bold">Black</span>
+                                        </label>
+                                        <div class="flex items-center gap-3.5">
+                                            <button type="button" onclick="selectTeeColor('Black', '#141417', '#2E2E34')" class="tee-swatch w-11 h-11 rounded-full bg-[#141417] border-2 border-champagne ring-2 ring-champagne/30 transition transform active:scale-95" data-color="Black" aria-label="Black T-shirt"></button>
+                                            <button type="button" onclick="selectTeeColor('White', '#F4F4F5', '#D4D4D8')" class="tee-swatch w-11 h-11 rounded-full bg-[#F4F4F5] border-2 border-white/25 transition transform active:scale-95" data-color="White" aria-label="White T-shirt"></button>
+                                            <button type="button" onclick="selectTeeColor('Red', '#DC2626', '#991B1B')" class="tee-swatch w-11 h-11 rounded-full bg-[#DC2626] border-2 border-white/25 transition transform active:scale-95" data-color="Red" aria-label="Red T-shirt"></button>
+                                            <button type="button" onclick="selectTeeColor('Blue', '#1D4ED8', '#1E3A8A')" class="tee-swatch w-11 h-11 rounded-full bg-[#1D4ED8] border-2 border-white/25 transition transform active:scale-95" data-color="Blue" aria-label="Blue T-shirt"></button>
+                                        </div>
+                                    </div>
+
+                                    <!-- Size Selector -->
+                                    <div>
+                                        <label class="block font-mono text-[11px] uppercase tracking-wider text-zinc-400 mb-2">
+                                            Size: <span id="selected-size-text" class="text-champagne font-bold">L</span>
+                                        </label>
+                                        <div class="grid grid-cols-5 gap-2">
+                                            <button type="button" onclick="selectTeeSize('S')" data-size="S" class="tee-size-btn min-h-[44px] rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 font-mono text-xs font-bold text-zinc-300 transition">S</button>
+                                            <button type="button" onclick="selectTeeSize('M')" data-size="M" class="tee-size-btn min-h-[44px] rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 font-mono text-xs font-bold text-zinc-300 transition">M</button>
+                                            <button type="button" onclick="selectTeeSize('L')" data-size="L" class="tee-size-btn min-h-[44px] rounded-xl bg-champagne text-obsidian font-mono text-xs font-bold transition">L</button>
+                                            <button type="button" onclick="selectTeeSize('XL')" data-size="XL" class="tee-size-btn min-h-[44px] rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 font-mono text-xs font-bold text-zinc-300 transition">XL</button>
+                                            <button type="button" onclick="selectTeeSize('XXL')" data-size="XXL" class="tee-size-btn min-h-[44px] rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 font-mono text-xs font-bold text-zinc-300 transition">XXL</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mt-7 pt-5 border-t border-white/10">
+                            <button onclick="addTeeToCart()" class="w-full min-h-[52px] py-3.5 px-6 rounded-full bg-ivory hover:bg-champagne text-obsidian font-mono text-xs sm:text-sm font-bold uppercase tracking-widest transition flex items-center justify-center gap-2.5">
+                                <i class="fa-solid fa-bag-shopping"></i> Add to Bag — KSh 1,000/=
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- RIGHT: HITSVILLE REPUBLIK CAPS — COMING SOON -->
+                    <div class="lg:col-span-5 editorial-card rounded-3xl p-5 sm:p-8 flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center justify-between gap-2 pb-5 mb-6 border-b border-white/10">
+                                <span class="font-mono text-xs uppercase tracking-widest text-champagne">
+                                    Drop 02 • Coming Soon
+                                </span>
+                                <span class="font-mono text-xs text-zinc-400">Limited Edition</span>
+                            </div>
+
+                            <!-- Minimalist Cap Preview -->
+                            <div class="rounded-2xl bg-[#09090B] border border-white/10 p-6 flex flex-col items-center justify-center min-h-[200px]">
+                                <svg viewBox="0 0 240 155" class="w-44 h-32 drop-shadow-xl">
+                                    <!-- Crown -->
+                                    <path d="M 45 102 C 45 44 175 44 175 102 Z" fill="#18181C" stroke="#2E2E34" stroke-width="2.5"/>
+                                    <!-- Brim -->
+                                    <path d="M 110 102 C 155 92 210 102 220 116 C 185 128 135 121 105 109 Z" fill="#121215" stroke="#D4AF37" stroke-width="2"/>
+                                    <!-- Top Button -->
+                                    <rect x="104" y="53" width="12" height="4" rx="2" fill="#D4AF37"/>
+                                    <!-- Embroidered Hitsville Spiral Mark -->
+                                    <g transform="translate(96, 63) scale(0.24)">
+                                        <circle cx="70" cy="70" r="56" fill="none" stroke="url(#hv-authentic-pattern)" stroke-width="12" stroke-linecap="round" stroke-dasharray="165 36 85 36" transform="rotate(-105 70 70)"/>
+                                        <circle cx="70" cy="70" r="38" fill="none" stroke="url(#hv-authentic-pattern)" stroke-width="12" stroke-linecap="round" stroke-dasharray="135 28 45 30" transform="rotate(-40 70 70)"/>
+                                        <path d="M 74 52 A 19 19 0 1 0 88 73 L 71 73" fill="none" stroke="url(#hv-authentic-pattern)" stroke-width="12" stroke-linecap="round"/>
+                                    </g>
+                                </svg>
+                                <span class="font-mono text-[10px] uppercase tracking-widest text-zinc-400 mt-2">
+                                    3D Embroidered Crest Headwear
+                                </span>
+                            </div>
+
+                            <div class="mt-6 space-y-2">
+                                <h3 class="font-display font-bold text-xl sm:text-2xl text-ivory">
+                                    Hitsville Republik Caps
+                                </h3>
+                                <p class="text-xs sm:text-sm text-zinc-400 leading-relaxed">
+                                    Structured snapbacks and curved-brim caps finished with raised embroidery of the Hitsville Republik spiral crest. Join the priority drop list to secure yours first.
+                                </p>
+                            </div>
+                        </div>
+
+                        <form onsubmit="handleCapWaitlist(event)" class="mt-7 pt-5 border-t border-white/10 space-y-3">
+                            <label class="block font-mono text-[11px] uppercase tracking-wider text-zinc-400">
+                                Priority Drop Notification (WhatsApp / Email)
+                            </label>
+                            <div class="flex flex-col sm:flex-row gap-2">
+                                <input id="cap-waitlist-input" type="text" required placeholder="07XX XXX XXX or email" class="w-full sm:flex-1 min-h-[46px] px-4 py-2.5 rounded-full bg-[#09090B] border border-white/15 text-base sm:text-xs font-mono text-ivory focus:border-champagne focus:outline-none">
+                                <button type="submit" class="w-full sm:w-auto min-h-[46px] px-5 py-2.5 rounded-full bg-champagne hover:bg-champagneLight text-obsidian font-mono text-xs font-bold uppercase tracking-wider transition shrink-0">
+                                    Notify Me on Drop
+                                </button>
+                            </div>
+                            <p id="cap-waitlist-msg" class="hidden text-xs font-mono text-emerald-400"></p>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. KENYA EVENT SCHEDULE -->
+        <section id="tour" class="py-14 sm:py-24 border-b border-white/10">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 sm:mb-12 gap-4">
+                    <div>
+                        <span class="font-mono text-xs uppercase tracking-[0.2em] text-champagne">Live Appearances</span>
+                        <h2 class="font-display font-extrabold text-2xl sm:text-4xl lg:text-5xl text-ivory mt-2">
+                            Upcoming Kenya Dates
+                        </h2>
+                    </div>
+                    <span class="font-mono text-xs text-zinc-400">
+                        RSVP for priority guestlist &amp; table access
+                    </span>
+                </div>
+
+                <div id="tour-list" class="divide-y divide-white/10 border-t border-b border-white/10">
+                    <!-- Populated via JS -->
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. SOCIAL & YOUTUBE CHANNELS -->
+        <section id="socials" class="py-14 sm:py-24 border-b border-white/10 bg-[#0C0C0F]">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="max-w-2xl mb-10 sm:mb-12">
+                    <span class="font-mono text-xs uppercase tracking-[0.2em] text-champagne">Official Network</span>
+                    <h2 class="font-display font-extrabold text-2xl sm:text-4xl lg:text-5xl text-ivory mt-2">
+                        Connect &amp; Subscribe
+                    </h2>
+                    <p class="text-zinc-400 text-sm sm:text-base mt-3">
+                        Stream full video sets on YouTube and follow DJ Christheblazer across social platforms for live tour announcements and Hitsville Republik releases.
+                    </p>
+                </div>
+
+                <div id="socials-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
+                    <!-- Populated via JS -->
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. EXECUTIVE BOOKING DESK -->
+        <section id="booking" class="py-14 sm:py-24">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start">
+                    
+                    <!-- Left Column -->
+                    <div class="lg:col-span-5 space-y-6">
+                        <span class="font-mono text-xs uppercase tracking-[0.2em] text-champagne">Management &amp; Inquiries</span>
+                        <h2 class="font-display font-extrabold text-2xl sm:text-4xl lg:text-5xl text-ivory leading-tight">
+                            Book DJ Christheblazer
+                        </h2>
+                        <p class="text-zinc-400 text-sm sm:text-base leading-relaxed">
+                            Available for club residencies, coastal festivals, corporate galas, campus events, and private VIP celebrations across Nairobi and East Africa.
+                        </p>
+
+                        <div class="editorial-card rounded-2xl p-6 space-y-5">
+                            <div>
+                                <p class="font-mono text-[11px] uppercase tracking-wider text-zinc-400">Primary Base</p>
+                                <p class="font-medium text-ivory text-sm sm:text-base mt-0.5">Nairobi, Kenya (Nationwide &amp; Regional Travel)</p>
+                            </div>
+                            <div class="border-t border-white/10 pt-4">
+                                <p class="font-mono text-[11px] uppercase tracking-wider text-zinc-400">Musical Direction</p>
+                                <p class="font-medium text-ivory text-sm mt-0.5">Kenyan &amp; Global Hits, Riddim, Hip-Hop, Afrobeats, Amapiano, Pop, Reggae</p>
+                            </div>
+                            <div class="border-t border-white/10 pt-4">
+                                <a href="https://youtube.com/@christheblazer?si=sZWgVy6MGRqrBKhg" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-wider text-champagne hover:text-champagneLight transition">
+                                    <i class="fa-brands fa-youtube text-hvCoral text-base"></i> Preview Live Sets on @christheblazer <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Column Form -->
+                    <div class="lg:col-span-7">
+                        <form id="booking-form" onsubmit="handleBookingSubmit(event)" class="editorial-card rounded-3xl p-6 sm:p-10 space-y-5">
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                                <div>
+                                    <label class="block font-mono text-[11px] uppercase tracking-wider text-zinc-400 mb-2">Name / Promoter *</label>
+                                    <input type="text" required placeholder="Full Name or Brand" class="w-full min-h-[48px] px-4 py-3 rounded-xl bg-[#09090B] border border-white/15 text-base sm:text-sm text-ivory focus:border-champagne focus:outline-none transition">
+                                </div>
+                                <div>
+                                    <label class="block font-mono text-[11px] uppercase tracking-wider text-zinc-400 mb-2">WhatsApp / Phone or Email *</label>
+                                    <input type="text" required placeholder="+254 7XX XXX XXX" class="w-full min-h-[48px] px-4 py-3 rounded-xl bg-[#09090B] border border-white/15 text-base sm:text-sm text-ivory focus:border-champagne focus:outline-none transition">
+                                </div>
+                            </div>
+
+                            <div class="grid grid-cols-1 sm:grid-cols-3 gap-5">
+                                <div>
+                                    <label class="block font-mono text-[11px] uppercase tracking-wider text-zinc-400 mb-2">Event Category *</label>
+                                    <select required class="w-full min-h-[48px] px-4 py-3 rounded-xl bg-[#09090B] border border-white/15 text-base sm:text-sm text-ivory focus:border-champagne focus:outline-none transition">
+                                        <option value="Club / Lounge Residency">Club / Lounge Set</option>
+                                        <option value="Festival / Concert">Festival / Concert</option>
+                                        <option value="Corporate / Brand Launch">Corporate / Brand Event</option>
+                                        <option value="Private VIP Celebration">Private VIP Party</option>
+                                        <option value="Wedding / Afterparty">Wedding / Afterparty</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label class="block font-mono text-[11px] uppercase tracking-wider text-zinc-400 mb-2">Date *</label>
+                                    <input type="date" required class="w-full min-h-[48px] px-4 py-3 rounded-xl bg-[#09090B] border border-white/15 text-base sm:text-sm text-ivory focus:border-champagne focus:outline-none transition">
+                                </div>
+                                <div>
+                                    <label class="block font-mono text-[11px] uppercase tracking-wider text-zinc-400 mb-2">Location / Venue *</label>
+                                    <input type="text" required placeholder="e.g. Westlands, Nairobi" class="w-full min-h-[48px] px-4 py-3 rounded-xl bg-[#09090B] border border-white/15 text-base sm:text-sm text-ivory focus:border-champagne focus:outline-none transition">
+                                </div>
+                            </div>
+
+                            <div>
+                                <label class="block font-mono text-[11px] uppercase tracking-wider text-zinc-400 mb-2">Event Brief &amp; Set Requirements *</label>
+                                <textarea rows="4" required placeholder="Share event schedule, preferred genres, set duration, and budget in KSh..." class="w-full px-4 py-3 rounded-xl bg-[#09090B] border border-white/15 text-base sm:text-sm text-ivory focus:border-champagne focus:outline-none transition"></textarea>
+                            </div>
+
+                            <button type="submit" class="w-full min-h-[52px] py-4 rounded-full bg-ivory hover:bg-champagne text-obsidian font-mono text-xs sm:text-sm font-bold uppercase tracking-widest transition">
+                                Submit Booking Inquiry
+                            </button>
+
+                            <div id="booking-success" class="hidden p-4 rounded-2xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-300 text-xs sm:text-sm">
+                                <p class="font-bold">Inquiry Received — Hitsville Republik Management</p>
+                                <p class="text-zinc-300 mt-1">Thank you. Our team will confirm availability and reach out via WhatsApp or email shortly.</p>
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="border-t border-white/10 bg-[#070709] py-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
+            <div class="flex items-center gap-3">
+                <div class="w-8 h-8 rounded-full bg-[#FAFAFA] p-1 flex items-center justify-center shrink-0">
+                    <svg class="w-full h-full">
+                        <use href="#hv-spiral-mark"></use>
+                    </svg>
+                </div>
+                <span class="font-display font-bold text-xs sm:text-sm tracking-wider text-ivory">
+                    DJ CHRISTHEBLAZER • HITSVILLE REPUBLIK
+                </span>
+            </div>
+            <div class="flex items-center gap-6 text-xs font-mono text-zinc-400">
+                <a href="https://youtube.com/@christheblazer?si=sZWgVy6MGRqrBKhg" target="_blank" rel="noopener noreferrer" class="hover:text-ivory transition">
+                    YouTube (@christheblazer)
+                </a>
+                <span>Nairobi, Kenya © 2026</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- UNOBTRUSIVE PERSISTENT BOTTOM AUDIO PLAYER -->
+    <div id="persistent-player" class="fixed bottom-0 inset-x-0 z-50 bg-[#09090B]/95 backdrop-blur-2xl border-t border-white/10 px-3 sm:px-6 pt-2.5 bottom-player-safe">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-2 sm:gap-4">
+            
+            <!-- Track Info & Mobile Transport -->
+            <div class="flex items-center justify-between gap-3 w-full sm:w-auto">
+                <div class="flex items-center gap-3 min-w-0 flex-1">
+                    <div class="w-10 h-10 rounded-full bg-[#FAFAFA] p-1 flex items-center justify-center shrink-0">
+                        <svg class="w-full h-full">
+                            <use href="#hv-spiral-mark"></use>
+                        </svg>
+                    </div>
+                    <div class="min-w-0 flex-1">
+                        <h4 id="player-title" class="font-display font-bold text-xs sm:text-sm text-ivory truncate">
+                            Nairobi Heat: Kenyan &amp; Global Hits
+                        </h4>
+                        <p class="text-[11px] font-mono text-zinc-400 truncate">
+                            DJ Christheblazer • <span id="player-bpm" class="text-champagne">106 BPM</span>
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Mobile Inline Controls -->
+                <div class="flex sm:hidden items-center gap-1.5 shrink-0">
+                    <button onclick="prevTrack()" aria-label="Previous Mix" class="w-9 h-9 rounded-full bg-white/5 text-zinc-300 flex items-center justify-center">
+                        <i class="fa-solid fa-backward-step text-xs"></i>
+                    </button>
+                    <button onclick="togglePlay()" aria-label="Play or Pause" class="w-10 h-10 rounded-full bg-ivory text-obsidian flex items-center justify-center">
+                        <i id="play-pause-icon-mobile" class="fa-solid fa-play ml-0.5 text-xs"></i>
+                    </button>
+                    <button onclick="nextTrack()" aria-label="Next Mix" class="w-9 h-9 rounded-full bg-white/5 text-zinc-300 flex items-center justify-center">
+                        <i class="fa-solid fa-forward-step text-xs"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Desktop Controls & Universal Scrubber -->
+            <div class="flex flex-col items-center w-full sm:max-w-md gap-1">
+                <div class="hidden sm:flex items-center gap-5">
+                    <button onclick="prevTrack()" class="text-zinc-400 hover:text-ivory transition" title="Previous">
+                        <i class="fa-solid fa-backward-step text-sm"></i>
+                    </button>
+                    <button onclick="togglePlay()" class="w-9 h-9 rounded-full bg-ivory hover:bg-champagne text-obsidian flex items-center justify-center transition" title="Play / Pause">
+                        <i id="play-pause-icon" class="fa-solid fa-play ml-0.5 text-xs"></i>
+                    </button>
+                    <button onclick="nextTrack()" class="text-zinc-400 hover:text-ivory transition" title="Next">
+                        <i class="fa-solid fa-forward-step text-sm"></i>
+                    </button>
+                </div>
+
+                <div class="flex items-center gap-2.5 w-full">
+                    <span id="current-time" class="font-mono text-[10px] text-zinc-400 w-8 text-right">0:00</span>
+                    <input id="seek-slider" type="range" min="0" max="100" value="0" oninput="seekAudio(this.value)" class="w-full" aria-label="Seek Mix">
+                    <span id="total-duration" class="font-mono text-[10px] text-zinc-400 w-8">3:40</span>
+                </div>
+            </div>
+
+            <!-- Equalizer & Volume -->
+            <div class="hidden md:flex items-center gap-4">
+                <div id="player-eq" class="flex items-end gap-1 h-4 paused-eq">
+                    <div class="w-0.5 h-full bg-champagne rounded-full eq-bar"></div>
+                    <div class="w-0.5 h-full bg-ivory rounded-full eq-bar"></div>
+                    <div class="w-0.5 h-full bg-champagne rounded-full eq-bar"></div>
+                    <div class="w-0.5 h-full bg-ivory rounded-full eq-bar"></div>
+                </div>
+                <div class="flex items-center gap-2">
+                    <i class="fa-solid fa-volume-low text-zinc-400 text-xs"></i>
+                    <input id="volume-slider" type="range" min="0" max="1" step="0.05" value="0.7" oninput="setVolume(this.value)" class="w-20" aria-label="Volume">
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- SLIDE-OUT SHOPPING BAG DRAWER (KES & M-PESA EXPRESS) -->
+    <div id="cart-drawer" class="fixed inset-0 z-50 hidden">
+        <div onclick="toggleCart(false)" class="absolute inset-0 bg-black/80 backdrop-blur-sm"></div>
+        
+        <div class="absolute right-0 top-0 bottom-0 w-full sm:max-w-md bg-stoneSurface border-l border-white/10 flex flex-col shadow-2xl">
+            <div class="p-5 sm:p-6 border-b border-white/10 flex items-center justify-between">
+                <h3 class="font-display font-bold text-lg text-ivory">Hitsville Bag</h3>
+                <button onclick="toggleCart(false)" aria-label="Close Bag" class="min-w-[44px] min-h-[44px] rounded-full bg-white/5 hover:bg-white/10 text-zinc-400 hover:text-ivory flex items-center justify-center">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+
+            <div id="cart-items-container" class="flex-1 overflow-y-auto p-5 sm:p-6 space-y-3.5">
+                <!-- Populated via JS -->
+            </div>
+
+            <div class="p-5 sm:p-6 border-t border-white/10 bg-[#09090B] space-y-4">
+                <!-- Promo Code -->
+                <div class="flex gap-2">
+                    <input id="promo-input" type="text" placeholder="Promo code (HITSVILLE10)" class="flex-1 min-h-[44px] px-4 py-2 rounded-full bg-stoneSurface border border-white/15 text-base sm:text-xs font-mono uppercase text-ivory focus:border-champagne focus:outline-none">
+                    <button onclick="applyPromoCode()" class="min-h-[44px] px-4 py-2 rounded-full bg-white/10 hover:bg-champagne hover:text-obsidian text-ivory font-mono text-xs font-bold uppercase transition">
+                        Apply
+                    </button>
+                </div>
+                <p id="promo-message" class="text-xs font-mono hidden"></p>
+
+                <!-- Payment Selector: M-Pesa Express vs Card -->
+                <div class="space-y-2.5">
+                    <span class="block font-mono text-[10px] uppercase tracking-wider text-zinc-400">Payment Method</span>
+                    <div class="grid grid-cols-2 gap-2">
+                        <button type="button" id="pay-mpesa-btn" onclick="selectPaymentMethod('mpesa')" class="min-h-[44px] py-2 px-3 rounded-xl bg-emerald-500/15 border border-emerald-500 text-emerald-300 font-mono text-xs font-bold flex items-center justify-center gap-1.5">
+                            <i class="fa-solid fa-mobile-screen-button"></i> M-Pesa Express
+                        </button>
+                        <button type="button" id="pay-card-btn" onclick="selectPaymentMethod('card')" class="min-h-[44px] py-2 px-3 rounded-xl bg-stoneSurface border border-white/15 text-zinc-400 font-mono text-xs font-bold flex items-center justify-center gap-1.5">
+                            <i class="fa-regular fa-credit-card"></i> Card / PayPal
+                        </button>
+                    </div>
+
+                    <div id="mpesa-phone-box">
+                        <input id="mpesa-phone-input" type="tel" placeholder="Safaricom M-Pesa: 07XX or 01XX XXX XXX" class="w-full min-h-[44px] px-4 py-2 rounded-xl bg-stoneSurface border border-emerald-500/40 text-base sm:text-xs font-mono text-ivory focus:border-emerald-400 focus:outline-none">
+                    </div>
+                </div>
+
+                <!-- Totals -->
+                <div class="space-y-1.5 text-sm pt-1">
+                    <div class="flex justify-between text-zinc-400">
+                        <span>Subtotal</span>
+                        <span id="cart-subtotal" class="font-mono">KSh 0/=</span>
+                    </div>
+                    <div id="discount-row" class="hidden flex justify-between text-champagne">
+                        <span>Promo (HITSVILLE10)</span>
+                        <span id="cart-discount" class="font-mono">-KSh 0/=</span>
+                    </div>
+                    <div class="flex justify-between text-ivory font-bold text-base pt-2 border-t border-white/10">
+                        <span>Total</span>
+                        <span id="cart-total" class="font-mono text-champagne">KSh 0/=</span>
+                    </div>
+                </div>
+
+                <button id="checkout-btn" onclick="handleCheckout()" class="w-full min-h-[50px] py-3.5 rounded-full bg-emerald-500 hover:bg-emerald-400 disabled:opacity-40 disabled:cursor-not-allowed text-obsidian font-mono text-xs font-bold uppercase tracking-widest transition">
+                    Pay via M-Pesa Express
+                </button>
+
+                <div id="checkout-confirmation" class="hidden p-4 rounded-2xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-300 text-xs space-y-1">
+                    <p class="font-bold">STK Push Sent — Order Confirmed!</p>
+                    <p id="checkout-confirm-detail" class="text-zinc-300">Enter your M-Pesa PIN on your phone. Hitsville Republik dispatch will reach out for delivery.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- TOAST CONTAINER -->
+    <div id="toast-container" class="fixed top-20 left-3 right-3 sm:left-auto sm:right-5 z-50 space-y-2 pointer-events-none flex flex-col items-center sm:items-end"></div>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        /* ==========================================================================
+           1. DJ PRESS PHOTO LIVE UPLOAD PREVIEW
+           ========================================================================== */
+        function handleDjPhotoUpload(event) {
+            const file = event.target.files[0];
+            if (!file) return;
+
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                const img = document.getElementById('dj-uploaded-photo');
+                const placeholder = document.getElementById('dj-photo-placeholder');
+                const statusLabel = document.getElementById('photo-status-label');
+                const btnText = document.getElementById('upload-btn-text');
+                const removeBtn = document.getElementById('remove-photo-btn');
+
+                img.src = e.target.result;
+                img.classList.remove('hidden');
+                placeholder.classList.add('hidden');
+                statusLabel.textContent = 'Official Press Portrait';
+                btnText.textContent = 'Change Photo';
+                removeBtn.classList.remove('hidden');
+
+                showToast('DJ Press Photo loaded into hero frame');
+            };
+            reader.readAsDataURL(file);
+        }
+
+        function resetDjPhoto() {
+            const img = document.getElementById('dj-uploaded-photo');
+            const placeholder = document.getElementById('dj-photo-placeholder');
+            const statusLabel = document.getElementById('photo-status-label');
+            const btnText = document.getElementById('upload-btn-text');
+            const removeBtn = document.getElementById('remove-photo-btn');
+            const input = document.getElementById('dj-photo-input');
+
+            input.value = '';
+            img.src = '';
+            img.classList.add('hidden');
+            placeholder.classList.remove('hidden');
+            statusLabel.textContent = 'Awaiting Press Photo';
+            btnText.textContent = 'Upload DJ Press Photo';
+            removeBtn.classList.add('hidden');
+        }
+
+        /* ==========================================================================
+           2. DATA DEFINITIONS
+           ========================================================================== */
+        const mixesData = [
+            {
+                id: 0,
+                title: "Nairobi Heat: Kenyan & Global Hits",
+                genre: "Kenyan Hits • Afrobeats • Pop",
+                bpm: 106,
+                duration: "03:40",
+                durationSec: 220,
+                baseFreq: 55,
+                pattern: [1, 0, 0, 1, 0, 0, 1, 0]
+            },
+            {
+                id: 1,
+                title: "Amapiano & Log Drum Sunset Session",
+                genre: "Amapiano • Afro-House",
+                bpm: 114,
+                duration: "04:15",
+                durationSec: 255,
+                baseFreq: 49,
+                pattern: [1, 0, 0, 1, 0, 1, 1, 0]
+            },
+            {
+                id: 2,
+                title: "Kingston to Westlands: Riddim & Reggae",
+                genre: "Riddim • Reggae",
+                bpm: 98,
+                duration: "03:50",
+                durationSec: 230,
+                baseFreq: 65.4,
+                pattern: [1, 0, 1, 0, 0, 1, 0, 1]
+            },
+            {
+                id: 3,
+                title: "Blazer After-Hours Hip-Hop & Trap",
+                genre: "Hip-Hop • Global Pop",
+                bpm: 136,
+                duration: "03:25",
+                durationSec: 205,
+                baseFreq: 41.2,
+                pattern: [1, 0, 1, 1, 0, 0, 1, 0]
+            }
+        ];
+
+        const tourDatesData = [
+            {
+                id: "gig-1",
+                date: "FRI, NOV 27",
+                city: "Westlands, Nairobi",
+                venue: "Hitsville Republik Friday Residency",
+                status: "GUESTLIST OPEN",
+                rsvped: false
+            },
+            {
+                id: "gig-2",
+                date: "SAT, DEC 05",
+                city: "Kilimani, Nairobi",
+                venue: "Riddim & Amapiano Penthouse Session",
+                status: "VIP TABLES",
+                rsvped: false
+            },
+            {
+                id: "gig-3",
+                date: "SAT, DEC 12",
+                city: "Nyali, Mombasa",
+                venue: "Jamhuri Coastal Sunset Showcase",
+                status: "SELLING FAST",
+                rsvped: false
+            },
+            {
+                id: "gig-4",
+                date: "THU, DEC 31",
+                city: "Nairobi, Kenya",
+                venue: "Hitsville Republik New Year's Eve Gala",
+                status: "EARLY ACCESS",
+                rsvped: false
+            }
+        ];
+
+        const socialsData = [
+            {
+                name: "YouTube Official",
+                handle: "@christheblazer",
+                desc: "Full DJ Mixes & Live Video Sets",
+                icon: "fa-brands fa-youtube",
+                accent: "text-hvCoral",
+                url: "https://youtube.com/@christheblazer?si=sZWgVy6MGRqrBKhg"
+            },
+            {
+                name: "Instagram",
+                handle: "@djchristheblazer",
+                desc: "Press Recaps, Gigs & Merch Drops",
+                icon: "fa-brands fa-instagram",
+                accent: "text-champagne",
+                url: "https://instagram.com"
+            },
+            {
+                name: "TikTok",
+                handle: "@djchristheblazer",
+                desc: "Live Transitions & Club Edits",
+                icon: "fa-brands fa-tiktok",
+                accent: "text-ivory",
+                url: "https://tiktok.com"
+            },
+            {
+                name: "SoundCloud",
+                handle: "Hitsville Republik",
+                desc: "Audio Mixtapes & Bootlegs",
+                icon: "fa-brands fa-soundcloud",
+                accent: "text-champagne",
+                url: "https://soundcloud.com"
+            },
+            {
+                name: "X (Twitter)",
+                handle: "@christheblazer",
+                desc: "Tour Updates & Kenya Music",
+                icon: "fa-brands fa-x-twitter",
+                accent: "text-ivory",
+                url: "https://x.com"
+            },
+            {
+                name: "Mixcloud",
+                handle: "DJ Christheblazer KE",
+                desc: "Extended Radio & Lounge Sets",
+                icon: "fa-brands fa-mixcloud",
+                accent: "text-champagne",
+                url: "https://mixcloud.com"
+            }
+        ];
+
+        /* ==========================================================================
+           3. WEB AUDIO SYNTHESIZER ENGINE
+           ========================================================================== */
+        let audioCtx = null;
+        let isPlaying = false;
+        let currentTrackIndex = 0;
+        let stepInterval = null;
+        let progressInterval = null;
+        let currentStep = 0;
+        let elapsedSeconds = 0;
+        let masterVolume = 0.7;
+
+        function initAudioContext() {
+            if (!audioCtx) {
+                const AudioContextClass = window.AudioContext || window.webkitAudioContext;
+                audioCtx = new AudioContextClass();
+            }
+            if (audioCtx.state === 'suspended') {
+                audioCtx.resume();
+            }
+        }
+
+        function triggerBeatStep(track, step) {
+            if (!audioCtx || !isPlaying) return;
+            const now = audioCtx.currentTime;
+
+            if (track.pattern[step % track.pattern.length] === 1) {
+                const osc = audioCtx.createOscillator();
+                const gain = audioCtx.createGain();
+                osc.type = 'sine';
+                osc.frequency.setValueAtTime(130, now);
+                osc.frequency.exponentialRampToValueAtTime(track.baseFreq, now + 0.12);
+
+                gain.gain.setValueAtTime(masterVolume * 0.8, now);
+                gain.gain.exponentialRampToValueAtTime(0.001, now + 0.34);
+
+                osc.connect(gain);
+                gain.connect(audioCtx.destination);
+                osc.start(now);
+                osc.stop(now + 0.35);
+            }
+
+            if (step % 2 === 1) {
+                const bufferSize = audioCtx.sampleRate * 0.045;
+                const buffer = audioCtx.createBuffer(1, bufferSize, audioCtx.sampleRate);
+                const data = buffer.getChannelData(0);
+                for (let i = 0; i < bufferSize; i++) data[i] = Math.random() * 2 - 1;
+
+                const noise = audioCtx.createBufferSource();
+                noise.buffer = buffer;
+
+                const filter = audioCtx.createBiquadFilter();
+                filter.type = 'highpass';
+                filter.frequency.value = 7200;
+
+                const gain = audioCtx.createGain();
+                gain.gain.setValueAtTime(masterVolume * 0.2, now);
+                gain.gain.exponentialRampToValueAtTime(0.001, now + 0.045);
+
+                noise.connect(filter);
+                filter.connect(gain);
+                gain.connect(audioCtx.destination);
+                noise.start(now);
+            }
+
+            if (step === 0 || step === 4) {
+                const synthOsc = audioCtx.createOscillator();
+                const synthGain = audioCtx.createGain();
+                synthOsc.type = 'triangle';
+                synthOsc.frequency.setValueAtTime(step === 0 ? track.baseFreq * 4 : track.baseFreq * 5, now);
+
+                synthGain.gain.setValueAtTime(masterVolume * 0.22, now);
+                synthGain.gain.exponentialRampToValueAtTime(0.001, now + 0.26);
+
+                synthOsc.connect(synthGain);
+                synthGain.connect(audioCtx.destination);
+                synthOsc.start(now);
+                synthOsc.stop(now + 0.28);
+            }
+        }
+
+        function startSequencer() {
+            stopSequencer();
+            const track = mixesData[currentTrackIndex];
+            const eighthNoteMs = (60 / track.bpm / 2) * 1000;
+
+            triggerBeatStep(track, currentStep);
+            stepInterval = setInterval(() => {
+                currentStep = (currentStep + 1) % 8;
+                triggerBeatStep(track, currentStep);
+            }, eighthNoteMs);
+
+            progressInterval = setInterval(() => {
+                if (elapsedSeconds < track.durationSec) {
+                    elapsedSeconds++;
+                    updateProgressUI();
+                } else {
+                    nextTrack();
+                }
+            }, 1000);
+        }
+
+        function stopSequencer() {
+            if (stepInterval) clearInterval(stepInterval);
+            if (progressInterval) clearInterval(progressInterval);
+        }
+
+        function playTrack(index) {
+            initAudioContext();
+            if (currentTrackIndex === index && isPlaying) {
+                togglePlay();
+                return;
+            }
+            currentTrackIndex = index;
+            elapsedSeconds = 0;
+            currentStep = 0;
+            isPlaying = true;
+            updatePlayerUI();
+            startSequencer();
+            showToast(`Playing: ${mixesData[index].title}`);
+        }
+
+        function togglePlay() {
+            initAudioContext();
+            isPlaying = !isPlaying;
+            if (isPlaying) startSequencer();
+            else stopSequencer();
+            updatePlayerUI();
+        }
+
+        function nextTrack() {
+            playTrack((currentTrackIndex + 1) % mixesData.length);
+        }
+
+        function prevTrack() {
+            playTrack((currentTrackIndex - 1 + mixesData.length) % mixesData.length);
+        }
+
+        function seekAudio(percent) {
+            const track = mixesData[currentTrackIndex];
+            elapsedSeconds = Math.floor((percent / 100) * track.durationSec);
+            updateProgressUI();
+        }
+
+        function setVolume(val) {
+            masterVolume = parseFloat(val);
+        }
+
+        function formatTime(sec) {
+            const m = Math.floor(sec / 60);
+            const s = sec % 60;
+            return `${m}:${s < 10 ? '0' : ''}${s}`;
+        }
+
+        function updateProgressUI() {
+            const track = mixesData[currentTrackIndex];
+            document.getElementById('seek-slider').value = (elapsedSeconds / track.durationSec) * 100;
+            document.getElementById('current-time').textContent = formatTime(elapsedSeconds);
+            document.getElementById('total-duration').textContent = track.duration;
+        }
+
+        function updatePlayerUI() {
+            const track = mixesData[currentTrackIndex];
+            document.getElementById('player-title').textContent = track.title;
+            document.getElementById('player-bpm').textContent = `${track.bpm} BPM`;
+            document.getElementById('total-duration').textContent = track.duration;
+
+            const icon = document.getElementById('play-pause-icon');
+            const mobileIcon = document.getElementById('play-pause-icon-mobile');
+            const playerEq = document.getElementById('player-eq');
+
+            if (isPlaying) {
+                icon.className = 'fa-solid fa-pause text-xs';
+                if (mobileIcon) mobileIcon.className = 'fa-solid fa-pause text-xs';
+                playerEq.classList.remove('paused-eq');
+            } else {
+                icon.className = 'fa-solid fa-play ml-0.5 text-xs';
+                if (mobileIcon) mobileIcon.className = 'fa-solid fa-play ml-0.5 text-xs';
+                playerEq.classList.add('paused-eq');
+            }
+            renderMixes();
+        }
+
+        /* ==========================================================================
+           4. MERCHANDISE CUSTOMIZER, BAG & M-PESA EXPRESS
+           ========================================================================== */
+        let selectedTeeColor = 'Black';
+        let selectedTeeSize = 'L';
+        let cart = [];
+        let discountApplied = false;
+        let paymentMethod = 'mpesa';
+
+        function selectTeeColor(colorName, fillHex, strokeHex) {
+            selectedTeeColor = colorName;
+            document.getElementById('selected-color-text').textContent = colorName;
+            document.getElementById('tee-color-label').textContent = `${colorName} Edition`;
+
+            const teeBody = document.getElementById('tee-svg-body');
+            teeBody.setAttribute('fill', fillHex);
+            teeBody.setAttribute('stroke', strokeHex);
+
+            document.querySelectorAll('.tee-swatch').forEach(btn => {
+                if (btn.dataset.color === colorName) {
+                    btn.classList.add('border-champagne', 'ring-2', 'ring-champagne/30');
+                    btn.classList.remove('border-white/25');
+                } else {
+                    btn.classList.remove('border-champagne', 'ring-2', 'ring-champagne/30');
+                    btn.classList.add('border-white/25');
+                }
+            });
+        }
+
+        function selectTeeSize(size) {
+            selectedTeeSize = size;
+            document.getElementById('selected-size-text').textContent = size;
+
+            document.querySelectorAll('.tee-size-btn').forEach(btn => {
+                if (btn.dataset.size === size) {
+                    btn.className = 'tee-size-btn min-h-[44px] rounded-xl bg-champagne text-obsidian font-mono text-xs font-bold transition';
+                } else {
+                    btn.className = 'tee-size-btn min-h-[44px] rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 font-mono text-xs font-bold text-zinc-300 transition';
+                }
+            });
+        }
+
+        function addTeeToCart() {
+            const key = `tee-${selectedTeeColor}-${selectedTeeSize}`;
+            const existing = cart.find(item => item.key === key);
+
+            if (existing) {
+                existing.qty += 1;
+            } else {
+                cart.push({
+                    key,
+                    name: `Hitsville Republik Tee (${selectedTeeColor})`,
+                    size: selectedTeeSize,
+                    price: 1000,
+                    qty: 1
+                });
+            }
+            updateCartUI();
+            showToast(`Added ${selectedTeeColor} Tee (${selectedTeeSize}) — KSh 1,000/=`);
+        }
+
+        function updateCartQty(key, delta) {
+            const idx = cart.findIndex(item => item.key === key);
+            if (idx === -1) return;
+            cart[idx].qty += delta;
+            if (cart[idx].qty <= 0) cart.splice(idx, 1);
+            updateCartUI();
+        }
+
+        function applyPromoCode() {
+            const code = document.getElementById('promo-input').value.trim().toUpperCase();
+            const msg = document.getElementById('promo-message');
+
+            if (code === 'HITSVILLE10') {
+                discountApplied = true;
+                msg.textContent = "✓ Code HITSVILLE10 applied (10% off)";
+                msg.className = "text-xs font-mono text-champagne block";
+            } else {
+                discountApplied = false;
+                msg.textContent = "✕ Invalid promo code. Try HITSVILLE10";
+                msg.className = "text-xs font-mono text-hvCoral block";
+            }
+            updateCartUI();
+        }
+
+        function selectPaymentMethod(method) {
+            paymentMethod = method;
+            const mpesaBtn = document.getElementById('pay-mpesa-btn');
+            const cardBtn = document.getElementById('pay-card-btn');
+            const phoneBox = document.getElementById('mpesa-phone-box');
+            const checkoutBtn = document.getElementById('checkout-btn');
+
+            if (method === 'mpesa') {
+                mpesaBtn.className = 'min-h-[44px] py-2 px-3 rounded-xl bg-emerald-500/15 border border-emerald-500 text-emerald-300 font-mono text-xs font-bold flex items-center justify-center gap-1.5';
+                cardBtn.className = 'min-h-[44px] py-2 px-3 rounded-xl bg-stoneSurface border border-white/15 text-zinc-400 font-mono text-xs font-bold flex items-center justify-center gap-1.5';
+                phoneBox.classList.remove('hidden');
+                checkoutBtn.textContent = 'Pay via M-Pesa Express';
+                checkoutBtn.className = 'w-full min-h-[50px] py-3.5 rounded-full bg-emerald-500 hover:bg-emerald-400 disabled:opacity-40 disabled:cursor-not-allowed text-obsidian font-mono text-xs font-bold uppercase tracking-widest transition';
+            } else {
+                cardBtn.className = 'min-h-[44px] py-2 px-3 rounded-xl bg-champagne/15 border border-champagne text-champagne font-mono text-xs font-bold flex items-center justify-center gap-1.5';
+                mpesaBtn.className = 'min-h-[44px] py-2 px-3 rounded-xl bg-stoneSurface border border-white/15 text-zinc-400 font-mono text-xs font-bold flex items-center justify-center gap-1.5';
+                phoneBox.classList.add('hidden');
+                checkoutBtn.textContent = 'Complete Card Checkout';
+                checkoutBtn.className = 'w-full min-h-[50px] py-3.5 rounded-full bg-ivory hover:bg-champagne disabled:opacity-40 disabled:cursor-not-allowed text-obsidian font-mono text-xs font-bold uppercase tracking-widest transition';
+            }
+        }
+
+        function formatKES(amount) {
+            return `KSh ${Math.round(amount).toLocaleString()}/=`;
+        }
+
+        function updateCartUI() {
+            const container = document.getElementById('cart-items-container');
+            const badge = document.getElementById('cart-badge');
+            const subtotalEl = document.getElementById('cart-subtotal');
+            const discountRow = document.getElementById('discount-row');
+            const discountEl = document.getElementById('cart-discount');
+            const totalEl = document.getElementById('cart-total');
+            const checkoutBtn = document.getElementById('checkout-btn');
+
+            const totalItems = cart.reduce((sum, item) => sum + item.qty, 0);
+            badge.textContent = totalItems;
+
+            if (cart.length === 0) {
+                container.innerHTML = `
+                    <div class="text-center py-14 space-y-2">
+                        <p class="text-zinc-300 font-medium text-sm">Your Hitsville bag is empty.</p>
+                        <p class="text-xs text-zinc-500">Select a T-shirt color (Black, White, Red, or Blue) for KSh 1,000/=</p>
+                    </div>
+                `;
+                subtotalEl.textContent = 'KSh 0/=';
+                discountRow.classList.add('hidden');
+                totalEl.textContent = 'KSh 0/=';
+                checkoutBtn.disabled = true;
+                return;
+            }
+
+            checkoutBtn.disabled = false;
+            container.innerHTML = cart.map(item => `
+                <div class="p-4 rounded-2xl bg-[#09090B] border border-white/10 flex items-center justify-between gap-3">
+                    <div class="min-w-0">
+                        <h4 class="font-display font-bold text-sm text-ivory truncate">${item.name}</h4>
+                        <p class="text-xs font-mono text-champagne mt-0.5">Size ${item.size} • ${formatKES(item.price)}</p>
+                    </div>
+                    <div class="flex items-center gap-2 shrink-0">
+                        <button onclick="updateCartQty('${item.key}', -1)" class="w-8 h-8 rounded-full bg-white/5 hover:bg-white/15 text-ivory text-xs flex items-center justify-center">
+                            <i class="fa-solid fa-minus"></i>
+                        </button>
+                        <span class="font-mono text-xs w-5 text-center">${item.qty}</span>
+                        <button onclick="updateCartQty('${item.key}', 1)" class="w-8 h-8 rounded-full bg-white/5 hover:bg-white/15 text-ivory text-xs flex items-center justify-center">
+                            <i class="fa-solid fa-plus"></i>
+                        </button>
+                    </div>
+                </div>
+            `).join('');
+
+            const subtotal = cart.reduce((sum, item) => sum + item.price * item.qty, 0);
+            const discount = discountApplied ? subtotal * 0.10 : 0;
+            const total = subtotal - discount;
+
+            subtotalEl.textContent = formatKES(subtotal);
+            if (discountApplied) {
+                discountRow.classList.remove('hidden');
+                discountEl.textContent = `-${formatKES(discount)}`;
+            } else {
+                discountRow.classList.add('hidden');
+            }
+            totalEl.textContent = formatKES(total);
+        }
+
+        function toggleCart(open) {
+            const drawer = document.getElementById('cart-drawer');
+            const confirmBox = document.getElementById('checkout-confirmation');
+            if (open) {
+                confirmBox.classList.add('hidden');
+                drawer.classList.remove('hidden');
+            } else {
+                drawer.classList.add('hidden');
+            }
+        }
+
+        function handleCheckout() {
+            const confirmBox = document.getElementById('checkout-confirmation');
+            const confirmDetail = document.getElementById('checkout-confirm-detail');
+            const phoneVal = document.getElementById('mpesa-phone-input').value.trim();
+
+            if (paymentMethod === 'mpesa') {
+                const displayPhone = phoneVal || 'your M-Pesa number';
+                confirmDetail.textContent = `M-Pesa STK Push sent to ${displayPhone}. Enter your PIN on your phone to complete payment.`;
+            } else {
+                confirmDetail.textContent = `Card payment confirmed! Thank you for supporting Hitsville Republik.`;
+            }
+
+            confirmBox.classList.remove('hidden');
+            cart = [];
+            discountApplied = false;
+            document.getElementById('promo-input').value = '';
+            document.getElementById('promo-message').classList.add('hidden');
+            updateCartUI();
+            showToast('Order submitted to Hitsville Republik');
+        }
+
+        function handleCapWaitlist(e) {
+            e.preventDefault();
+            const input = document.getElementById('cap-waitlist-input');
+            const msg = document.getElementById('cap-waitlist-msg');
+            msg.textContent = `✓ Confirmed. We will alert ${input.value} when Hitsville Caps release.`;
+            msg.classList.remove('hidden');
+            input.value = '';
+            showToast('Joined Hitsville Caps priority drop list');
+        }
+
+        /* ==========================================================================
+           5. RENDER SECTIONS
+           ========================================================================== */
+        function renderMixes() {
+            const grid = document.getElementById('mixes-grid');
+            grid.innerHTML = mixesData.map((mix, index) => {
+                const active = currentTrackIndex === index && isPlaying;
+                return `
+                    <div class="editorial-card rounded-2xl p-4 sm:p-5 flex items-center justify-between gap-4 ${active ? 'border-champagne/60 bg-stoneElevated' : ''}">
+                        <div class="flex items-center gap-3.5 sm:gap-4 min-w-0 flex-1">
+                            <button onclick="playTrack(${index})" aria-label="Play ${mix.title}" class="w-12 h-12 rounded-full ${active ? 'bg-champagne text-obsidian' : 'bg-white/5 hover:bg-ivory text-ivory hover:text-obsidian border border-white/15'} flex items-center justify-center text-sm shrink-0 transition">
+                                <i class="fa-solid ${active ? 'fa-pause' : 'fa-play ml-0.5'}"></i>
+                            </button>
+                            <div class="min-w-0 flex-1">
+                                <span class="block font-mono text-[10px] uppercase tracking-wider text-champagne truncate">
+                                    ${mix.genre} • ${mix.bpm} BPM
+                                </span>
+                                <h3 class="font-display font-bold text-base sm:text-lg text-ivory truncate mt-0.5">
+                                    ${mix.title}
+                                </h3>
+                                <div class="flex items-center gap-3 text-[11px] font-mono text-zinc-400 mt-1">
+                                    <span>${mix.duration}</span>
+                                    <span>•</span>
+                                    <a href="https://youtube.com/@christheblazer?si=sZWgVy6MGRqrBKhg" target="_blank" rel="noopener noreferrer" class="text-ivory hover:text-champagne transition inline-flex items-center gap-1">
+                                        <i class="fa-brands fa-youtube text-hvCoral"></i> Watch Full Set
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        function toggleRSVP(gigId) {
+            const gig = tourDatesData.find(g => g.id === gigId);
+            gig.rsvped = !gig.rsvped;
+            renderTourDates();
+            if (gig.rsvped) showToast(`Guestlist RSVP confirmed for ${gig.city}`);
+        }
+
+        function renderTourDates() {
+            const list = document.getElementById('tour-list');
+            list.innerHTML = tourDatesData.map(gig => `
+                <div class="py-5 sm:py-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                    <div class="flex flex-col sm:flex-row sm:items-center gap-1.5 sm:gap-10">
+                        <span class="font-mono text-xs sm:text-sm font-bold text-champagne w-28 shrink-0">
+                            ${gig.date}
+                        </span>
+                        <div>
+                            <h3 class="font-display font-bold text-lg sm:text-xl text-ivory">${gig.city}</h3>
+                            <p class="text-xs sm:text-sm text-zinc-400">${gig.venue}</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center justify-between sm:justify-end gap-3">
+                        <span class="font-mono text-[10px] uppercase tracking-wider text-zinc-400">
+                            ${gig.status}
+                        </span>
+                        <button onclick="toggleRSVP('${gig.id}')" class="min-h-[42px] px-5 py-2 rounded-full font-mono text-xs font-bold uppercase tracking-wider transition ${gig.rsvped ? 'bg-champagne text-obsidian' : 'bg-white/5 hover:bg-ivory text-ivory hover:text-obsidian border border-white/15'}">
+                            ${gig.rsvped ? 'RSVP Confirmed' : 'RSVP'}
+                        </button>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function renderSocials() {
+            const grid = document.getElementById('socials-grid');
+            grid.innerHTML = socialsData.map(soc => `
+                <a href="${soc.url}" target="_blank" rel="noopener noreferrer" class="editorial-card rounded-2xl p-5 flex items-center justify-between gap-4 group">
+                    <div class="flex items-center gap-4 min-w-0">
+                        <div class="w-11 h-11 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-lg ${soc.accent} shrink-0">
+                            <i class="${soc.icon}"></i>
+                        </div>
+                        <div class="min-w-0">
+                            <h3 class="font-display font-bold text-sm sm:text-base text-ivory group-hover:text-champagne transition truncate">${soc.name}</h3>
+                            <p class="font-mono text-xs text-zinc-300 truncate">${soc.handle}</p>
+                            <span class="block text-[11px] text-zinc-500 mt-0.5 truncate">${soc.desc}</span>
+                        </div>
+                    </div>
+                    <i class="fa-solid fa-arrow-up-right-from-square text-xs text-zinc-500 group-hover:text-ivory transition shrink-0"></i>
+                </a>
+            `).join('');
+        }
+
+        function handleBookingSubmit(e) {
+            e.preventDefault();
+            document.getElementById('booking-success').classList.remove('hidden');
+            e.target.reset();
+            showToast('Booking inquiry sent to Hitsville Republik');
+        }
+
+        function toggleMobileMenu() {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        }
+
+        function showToast(message) {
+            const container = document.getElementById('toast-container');
+            const toast = document.createElement('div');
+            toast.className = 'px-4 py-3 rounded-full bg-stoneElevated border border-champagne/40 text-ivory text-xs font-mono shadow-2xl flex items-center gap-2';
+            toast.innerHTML = `<span class="w-1.5 h-1.5 rounded-full bg-champagne"></span> <span>${message}</span>`;
+            container.appendChild(toast);
+            setTimeout(() => toast.remove(), 3200);
+        }
+
+        window.addEventListener('DOMContentLoaded', () => {
+            renderMixes();
+            renderTourDates();
+            renderSocials();
+            updateCartUI();
+        });
+    </script>
+</body>
+</html>
